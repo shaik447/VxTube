@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3813A23E1F03E6D3001B37F2 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3813A23D1F03E6D3001B37F2 /* HomeVC.swift */; };
 		38284BFA1F03CFD6006378DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38284BF91F03CFD6006378DC /* AppDelegate.swift */; };
-		38284BFC1F03CFD6006378DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38284BFB1F03CFD6006378DC /* ViewController.swift */; };
 		38284BFF1F03CFD6006378DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38284BFD1F03CFD6006378DC /* Main.storyboard */; };
 		38284C011F03CFD6006378DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38284C001F03CFD6006378DC /* Assets.xcassets */; };
 		38284C041F03CFD6006378DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38284C021F03CFD6006378DC /* LaunchScreen.storyboard */; };
+		3838D4101F05869A00A360F7 /* VxToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838D40F1F05869A00A360F7 /* VxToolbarButton.swift */; };
+		3838D4131F0587D700A360F7 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838D4121F0587D700A360F7 /* UIView+Anchors.swift */; };
+		3854EDC91F098CCE00F18684 /* CenterText-Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3854EDC81F098CCE00F18684 /* CenterText-Image.swift */; };
+		388D100A1F0AD12600CF7E01 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388D10091F0AD12600CF7E01 /* AppConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3813A23D1F03E6D3001B37F2 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		38284BF61F03CFD5006378DC /* VxTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VxTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38284BF91F03CFD6006378DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		38284BFB1F03CFD6006378DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		38284BFE1F03CFD6006378DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38284C001F03CFD6006378DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38284C031F03CFD6006378DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38284C051F03CFD6006378DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3838D40F1F05869A00A360F7 /* VxToolbarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VxToolbarButton.swift; sourceTree = "<group>"; };
+		3838D4121F0587D700A360F7 /* UIView+Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
+		3854EDC81F098CCE00F18684 /* CenterText-Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CenterText-Image.swift"; sourceTree = "<group>"; };
+		388D10091F0AD12600CF7E01 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,50 @@
 		38284BF81F03CFD5006378DC /* VxTube */ = {
 			isa = PBXGroup;
 			children = (
+				3838D4111F0587A800A360F7 /* Helpers */,
+				38284C0D1F03E2B7006378DC /* View */,
+				38284C0C1F03E2AE006378DC /* Model */,
+				38284C0B1F03E29F006378DC /* Controller */,
 				38284BF91F03CFD6006378DC /* AppDelegate.swift */,
-				38284BFB1F03CFD6006378DC /* ViewController.swift */,
 				38284BFD1F03CFD6006378DC /* Main.storyboard */,
 				38284C001F03CFD6006378DC /* Assets.xcassets */,
 				38284C021F03CFD6006378DC /* LaunchScreen.storyboard */,
 				38284C051F03CFD6006378DC /* Info.plist */,
 			);
 			path = VxTube;
+			sourceTree = "<group>";
+		};
+		38284C0B1F03E29F006378DC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3813A23D1F03E6D3001B37F2 /* HomeVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		38284C0C1F03E2AE006378DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		38284C0D1F03E2B7006378DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3838D40F1F05869A00A360F7 /* VxToolbarButton.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3838D4111F0587A800A360F7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3838D4121F0587D700A360F7 /* UIView+Anchors.swift */,
+				3854EDC81F098CCE00F18684 /* CenterText-Image.swift */,
+				388D10091F0AD12600CF7E01 /* AppConfig.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38284BFC1F03CFD6006378DC /* ViewController.swift in Sources */,
 				38284BFA1F03CFD6006378DC /* AppDelegate.swift in Sources */,
+				3838D4131F0587D700A360F7 /* UIView+Anchors.swift in Sources */,
+				3854EDC91F098CCE00F18684 /* CenterText-Image.swift in Sources */,
+				388D100A1F0AD12600CF7E01 /* AppConfig.swift in Sources */,
+				3838D4101F05869A00A360F7 /* VxToolbarButton.swift in Sources */,
+				3813A23E1F03E6D3001B37F2 /* HomeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +350,7 @@
 				38284C0A1F03CFD6006378DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
