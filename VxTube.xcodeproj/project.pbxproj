@@ -82,14 +82,14 @@
 			children = (
 				3813A23D1F03E6D3001B37F2 /* HomeVC.swift */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		38284C0C1F03E2AE006378DC /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		38284C0D1F03E2B7006378DC /* View */ = {
@@ -98,7 +98,7 @@
 				3838D40F1F05869A00A360F7 /* VxToolbar.swift */,
 				38BE15161F1D56FF002CDA5C /* HomeView.swift */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		3838D4111F0587A800A360F7 /* Helpers */ = {
@@ -108,7 +108,7 @@
 				3854EDC81F098CCE00F18684 /* CenterText-Image.swift */,
 				388D10091F0AD12600CF7E01 /* AppConfig.swift */,
 			);
-			name = Helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
