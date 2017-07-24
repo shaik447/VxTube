@@ -136,7 +136,7 @@
                                     <constraint firstItem="uNh-4t-tdy" firstAttribute="centerY" secondItem="TUx-I7-Gg8" secondAttribute="centerY" id="c4j-ju-Hgp"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dox-MU-pN6" userLabel="homeview">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dox-MU-pN6" userLabel="homeview" customClass="HomeView" customModule="VxTube" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="80" width="375" height="542"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ff-km-otH">

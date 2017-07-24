@@ -12,10 +12,11 @@
 		38284BFF1F03CFD6006378DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38284BFD1F03CFD6006378DC /* Main.storyboard */; };
 		38284C011F03CFD6006378DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38284C001F03CFD6006378DC /* Assets.xcassets */; };
 		38284C041F03CFD6006378DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38284C021F03CFD6006378DC /* LaunchScreen.storyboard */; };
-		3838D4101F05869A00A360F7 /* VxToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838D40F1F05869A00A360F7 /* VxToolbarButton.swift */; };
+		3838D4101F05869A00A360F7 /* VxToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838D40F1F05869A00A360F7 /* VxToolbar.swift */; };
 		3838D4131F0587D700A360F7 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838D4121F0587D700A360F7 /* UIView+Anchors.swift */; };
 		3854EDC91F098CCE00F18684 /* CenterText-Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3854EDC81F098CCE00F18684 /* CenterText-Image.swift */; };
 		388D100A1F0AD12600CF7E01 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388D10091F0AD12600CF7E01 /* AppConfig.swift */; };
+		38BE15171F1D56FF002CDA5C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15161F1D56FF002CDA5C /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +27,11 @@
 		38284C001F03CFD6006378DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38284C031F03CFD6006378DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38284C051F03CFD6006378DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3838D40F1F05869A00A360F7 /* VxToolbarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VxToolbarButton.swift; sourceTree = "<group>"; };
+		3838D40F1F05869A00A360F7 /* VxToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VxToolbar.swift; sourceTree = "<group>"; };
 		3838D4121F0587D700A360F7 /* UIView+Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
 		3854EDC81F098CCE00F18684 /* CenterText-Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CenterText-Image.swift"; sourceTree = "<group>"; };
 		388D10091F0AD12600CF7E01 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		38BE15161F1D56FF002CDA5C /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +95,8 @@
 		38284C0D1F03E2B7006378DC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3838D40F1F05869A00A360F7 /* VxToolbarButton.swift */,
+				3838D40F1F05869A00A360F7 /* VxToolbar.swift */,
+				38BE15161F1D56FF002CDA5C /* HomeView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -182,10 +185,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				38284BFA1F03CFD6006378DC /* AppDelegate.swift in Sources */,
+				38BE15171F1D56FF002CDA5C /* HomeView.swift in Sources */,
 				3838D4131F0587D700A360F7 /* UIView+Anchors.swift in Sources */,
 				3854EDC91F098CCE00F18684 /* CenterText-Image.swift in Sources */,
 				388D100A1F0AD12600CF7E01 /* AppConfig.swift in Sources */,
-				3838D4101F05869A00A360F7 /* VxToolbarButton.swift in Sources */,
+				3838D4101F05869A00A360F7 /* VxToolbar.swift in Sources */,
 				3813A23E1F03E6D3001B37F2 /* HomeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
