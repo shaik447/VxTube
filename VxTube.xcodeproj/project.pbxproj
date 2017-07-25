@@ -17,6 +17,7 @@
 		3854EDC91F098CCE00F18684 /* CenterText-Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3854EDC81F098CCE00F18684 /* CenterText-Image.swift */; };
 		388D100A1F0AD12600CF7E01 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388D10091F0AD12600CF7E01 /* AppConfig.swift */; };
 		38BE15171F1D56FF002CDA5C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15161F1D56FF002CDA5C /* HomeView.swift */; };
+		5677AAF91F27818D00E02631 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5677AAF81F27818D00E02631 /* Video.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3854EDC81F098CCE00F18684 /* CenterText-Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CenterText-Image.swift"; path = "VxTube/Helpers/CenterText-Image.swift"; sourceTree = SOURCE_ROOT; };
 		388D10091F0AD12600CF7E01 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConfig.swift; path = VxTube/Helpers/AppConfig.swift; sourceTree = SOURCE_ROOT; };
 		38BE15161F1D56FF002CDA5C /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = VxTube/View/HomeView.swift; sourceTree = SOURCE_ROOT; };
+		5677AAF81F27818D00E02631 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		38284C0C1F03E2AE006378DC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5677AAF81F27818D00E02631 /* Video.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				3838D4131F0587D700A360F7 /* UIView+Anchors.swift in Sources */,
 				3854EDC91F098CCE00F18684 /* CenterText-Image.swift in Sources */,
 				388D100A1F0AD12600CF7E01 /* AppConfig.swift in Sources */,
+				5677AAF91F27818D00E02631 /* Video.swift in Sources */,
 				3838D4101F05869A00A360F7 /* VxToolbar.swift in Sources */,
 				3813A23E1F03E6D3001B37F2 /* HomeVC.swift in Sources */,
 			);

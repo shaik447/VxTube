@@ -10,6 +10,7 @@ import UIKit
 
 class HomeView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    private var videos : [Video]!
     
     lazy var HomeFeedCollectionView : UICollectionView = {
         let flowlayout = UICollectionViewFlowLayout()
@@ -40,7 +41,7 @@ class HomeView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return videos.count 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,7 +56,15 @@ class HomeView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UI
     func setupView() {
         addSubview(HomeFeedCollectionView)
         HomeFeedCollectionView.fillSuperview()
+    }
+    
+    func loadHomefeed(){
+        let video1 = Video(thumbnailUrl: "colbert", userProfileUrl: "profilepic", videoTitle: "The Mooch Deletes His Tweets - The Daily Show | Comedy Central", noOfViews: 5800, channelName: "Comedy Central UK", timeStamp: 180)
+        let video2 = Video(thumbnailUrl: "colbert", userProfileUrl: "profilepic", videoTitle: "That one friend who cannot grow a beard", noOfViews: 51000, channelName: "ashish chanchalani vines", timeStamp: 18)
+        let video3 = Video(thumbnailUrl: "colbert", userProfileUrl: "profilepic", videoTitle: "Stephen Introduces His Anthony Scaramucci Impression", noOfViews: 147000, channelName: "The Late Show With Stephen Colbert", timeStamp: 360)
+        let video4 = Video(thumbnailUrl: "colbert", userProfileUrl: "profilepic", videoTitle: "How to go from military to IOS Developer", noOfViews: 3000, channelName: "Lets Build That App", timeStamp: 1320)
         
+        videos = [video1,video2,video3,video4]
         
     }
     
