@@ -34,18 +34,20 @@ class HomeView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UI
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()
+        loadHomefeed()
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return videos.count 
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        return (videos != nil) ? videos.count : 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath) as! HomefeedCell
+        cell.video = videos[indexPath.item]
         return cell
     }
     
@@ -59,12 +61,12 @@ class HomeView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UI
     }
     
     func loadHomefeed(){
-        let video1 = Video(thumbnailUrl: "colbert", userProfileUrl: "profilepic", videoTitle: "The Mooch Deletes His Tweets - The Daily Show | Comedy Central", noOfViews: 5800, channelName: "Comedy Central UK", timeStamp: 180)
-        let video2 = Video(thumbnailUrl: "colbert", userProfileUrl: "profilepic", videoTitle: "That one friend who cannot grow a beard", noOfViews: 51000, channelName: "ashish chanchalani vines", timeStamp: 18)
-        let video3 = Video(thumbnailUrl: "colbert", userProfileUrl: "profilepic", videoTitle: "Stephen Introduces His Anthony Scaramucci Impression", noOfViews: 147000, channelName: "The Late Show With Stephen Colbert", timeStamp: 360)
-        let video4 = Video(thumbnailUrl: "colbert", userProfileUrl: "profilepic", videoTitle: "How to go from military to IOS Developer", noOfViews: 3000, channelName: "Lets Build That App", timeStamp: 1320)
+        let video1 = Video(thumbnailUrl: "colbert", videoTitle: "The Mooch Deletes His Tweets - The Daily Show | Comedy Central The Mooch Deletes His Tweets - The Daily Show", noOfViews: 5800, timeStamp: 180, channel: Channel(channelName: "The Comedy Central UK ", userProfileUrl: "profilepic"))
+        let video2 = Video(thumbnailUrl: "colbert", videoTitle: "That one friend who cannot grow a beard", noOfViews: 51000, timeStamp: 18,channel: Channel(channelName: "Tashish chanchalani vines", userProfileUrl: "profilepic"))
         
-        videos = [video1,video2,video3,video4]
+        let video3 = Video(thumbnailUrl: "colbert", videoTitle: "How to go from military to IOS Developer", noOfViews: 3000, timeStamp: 1320, channel: Channel(channelName: "Lets Build That App", userProfileUrl: "profilepic"))
+        
+        videos = [video1,video2,video3]
         
     }
     
@@ -73,22 +75,19 @@ class HomeView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UI
 }
 
 class HomefeedCell: UICollectionViewCell {
-    private var _title : String!
-    private var _channelName : String!
-    private var _noofviews : Int!
-    private var _hoursago : Int!
-    
-    var title : String? {
+
+    var video : Video?{
         didSet{
-            _title = title
+            videothumbnail.image = UIImage(named: video?.thumbnailUrl ?? "colbert")
+            channelThumbnail.image = UIImage(named: video?.channel.userProfileUrl ?? "profilepic")
+            title.text = video?.videoTitle ?? ""
+            print(title.font.pointSize)
+            print(title.text?.height(withConstrainedWidth: videoDescription.bounds.width, font: title.font) ?? UIFont.systemFont(ofSize: 16))
+        
+            
         }
     }
-    
-    var channelName : String? {
-        didSet{
-            _channelName = channelName
-        }
-    }
+   
     
     var videothumbnail : UIImageView = {
        let imageview  = UIImageView()
@@ -111,16 +110,18 @@ class HomefeedCell: UICollectionViewCell {
     var videoDescription : UIView = {
         let uiview = UIView()
         //uiview.backgroundColor = .red
-        uiview.layer.borderColor = UIColor.gray.cgColor
-        uiview.layer.borderWidth = 1
+//        uiview.layer.borderColor = UIColor.gray.cgColor
+//        uiview.layer.borderWidth = 1
         return uiview
     }()
     
-    var fullDescription : UITextView = {
-        let label = UITextView()
-        label.text = "Shaik"
-        label.backgroundColor = .clear
-        return label
+    
+    var title : UILabel={
+        let titlelabel = UILabel()
+        titlelabel.text = "Shaik"
+        titlelabel.numberOfLines = 2
+        titlelabel.font = UIFont.boldSystemFont(ofSize: 14)
+        return titlelabel
     }()
     
     var seperator : UIView = {
@@ -152,8 +153,8 @@ class HomefeedCell: UICollectionViewCell {
         videoDescription.anchor(videothumbnail.bottomAnchor, left: channelThumbnail.rightAnchor, bottom: self.bottomAnchor, right: videothumbnail.rightAnchor, topConstant: 5, leftConstant: 5, bottomConstant: -10, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         seperator.anchor(nil, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 1)
         
-        videoDescription.addSubview(fullDescription)
-        fullDescription.fillSuperview()
+        videoDescription.addSubview(title)
+        title.anchor(videoDescription.topAnchor, left: videoDescription.leftAnchor, bottom: nil, right: videoDescription.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 44)
         
     }
     

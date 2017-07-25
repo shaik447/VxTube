@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38057AC11F27E567000F357F /* StringSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38057AC01F27E567000F357F /* StringSize.swift */; };
 		3813A23E1F03E6D3001B37F2 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3813A23D1F03E6D3001B37F2 /* HomeVC.swift */; };
 		38284BFA1F03CFD6006378DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38284BF91F03CFD6006378DC /* AppDelegate.swift */; };
 		38284BFF1F03CFD6006378DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38284BFD1F03CFD6006378DC /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38057AC01F27E567000F357F /* StringSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringSize.swift; sourceTree = "<group>"; };
 		3813A23D1F03E6D3001B37F2 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = VxTube/Controller/HomeVC.swift; sourceTree = SOURCE_ROOT; };
 		38284BF61F03CFD5006378DC /* VxTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VxTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38284BF91F03CFD6006378DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				3838D4121F0587D700A360F7 /* UIView+Anchors.swift */,
 				3854EDC81F098CCE00F18684 /* CenterText-Image.swift */,
 				388D10091F0AD12600CF7E01 /* AppConfig.swift */,
+				38057AC01F27E567000F357F /* StringSize.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				3838D4131F0587D700A360F7 /* UIView+Anchors.swift in Sources */,
 				3854EDC91F098CCE00F18684 /* CenterText-Image.swift in Sources */,
 				388D100A1F0AD12600CF7E01 /* AppConfig.swift in Sources */,
+				38057AC11F27E567000F357F /* StringSize.swift in Sources */,
 				5677AAF91F27818D00E02631 /* Video.swift in Sources */,
 				3838D4101F05869A00A360F7 /* VxToolbar.swift in Sources */,
 				3813A23E1F03E6D3001B37F2 /* HomeVC.swift in Sources */,

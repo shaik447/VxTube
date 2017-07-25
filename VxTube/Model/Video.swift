@@ -10,10 +10,14 @@ import UIKit
 
 struct Video{
     var thumbnailUrl : String
-    var userProfileUrl : String
     var videoTitle : String
     var noOfViews : Int
-    var channelName : String
     var timeStamp : Int
+    var channel : Channel
     
+}
+
+struct Channel{
+    var channelName : String
+    var userProfileUrl : String
 }
