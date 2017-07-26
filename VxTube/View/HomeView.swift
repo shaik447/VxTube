@@ -75,20 +75,48 @@ class HomeView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UI
 }
 
 class HomefeedCell: UICollectionViewCell {
+    
+    
 
     var video : Video?{
         didSet{
             videothumbnail.image = UIImage(named: video?.thumbnailUrl ?? "colbert")
             channelThumbnail.image = UIImage(named: video?.channel.userProfileUrl ?? "profilepic")
             title.text = video?.videoTitle ?? ""
-            print(title.font.pointSize)
-            print(title.text?.height(withConstrainedWidth: videoDescription.bounds.width, font: title.font) ?? UIFont.systemFont(ofSize: 16))
+            
+            
+            
+            if let videoTitle = video?.videoTitle{
+                title.text = videoTitle
+                let videoDescwidth = UIScreen.main.bounds.width-10-48-10-5
+                let titleTextheight = videoTitle.height(withConstrainedWidth: videoDescwidth, font: title.font)
+                
+                print(titleTextheight)
+                if let  titleheightconstraint = (title.constraints.filter {$0.firstAttribute == NSLayoutAttribute.height}.first){
+                    if titleTextheight <= 20{
+                      titleheightconstraint.constant = 28
+                    }
+                    
+                    
+                    
+                }
+                
+                
+            }
+            
+            
+            
+            
+            
+            
         
             
         }
     }
    
+   
     
+   
     var videothumbnail : UIImageView = {
        let imageview  = UIImageView()
         imageview.image = #imageLiteral(resourceName: "colbert")
@@ -124,6 +152,19 @@ class HomefeedCell: UICollectionViewCell {
         return titlelabel
     }()
     
+    var subtitle : UITextView={
+        let subtitle = UITextView()
+        subtitle.text = "The Comedy Central UK • 3254678 views • 11 hours ago"
+        subtitle.font = UIFont.systemFont(ofSize: 12)
+        subtitle.textColor = UIColor.gray
+        //subtitle.layer.borderColor = UIColor.black.cgColor
+        //subtitle.layer.borderWidth = 1.0
+        //subtitle.frame.size.height = 25
+        subtitle.contentInset = UIEdgeInsets(top: -8, left: -4, bottom: 0, right: 0)
+        return subtitle
+        
+    }()
+    
     var seperator : UIView = {
         let uiview = UIView()
         uiview.backgroundColor = .gray
@@ -142,6 +183,7 @@ class HomefeedCell: UICollectionViewCell {
     }
     
     func setupViews(){
+       
         self.backgroundColor = UIColor.white
         addSubview(videothumbnail)
         addSubview(channelThumbnail)
@@ -154,7 +196,11 @@ class HomefeedCell: UICollectionViewCell {
         seperator.anchor(nil, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 1)
         
         videoDescription.addSubview(title)
+        videoDescription.addSubview(subtitle)
+        
         title.anchor(videoDescription.topAnchor, left: videoDescription.leftAnchor, bottom: nil, right: videoDescription.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 44)
+        
+        subtitle.anchor(title.bottomAnchor, left: videoDescription.leftAnchor, bottom: nil, right: videoDescription.rightAnchor, topConstant: -5, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 30)
         
     }
     

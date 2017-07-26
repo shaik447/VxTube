@@ -33,7 +33,6 @@ class HomeVC: UIViewController {
         accountImageView.clipsToBounds = true
         videoBtn.imageView?.image = #imageLiteral(resourceName: "CamCorder").withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         videoBtn.tintColor = .white
-        
         vxtoolbar.tabViews = [
             "Home":homeView,
             "Trending":trendingView,
