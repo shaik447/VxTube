@@ -82,40 +82,18 @@ class HomefeedCell: UICollectionViewCell {
         didSet{
             videothumbnail.image = UIImage(named: video?.thumbnailUrl ?? "colbert")
             channelThumbnail.image = UIImage(named: video?.channel.userProfileUrl ?? "profilepic")
-            title.text = video?.videoTitle ?? ""
-            
-            
-            
             if let videoTitle = video?.videoTitle{
                 title.text = videoTitle
                 let videoDescwidth = UIScreen.main.bounds.width-10-48-10-5
                 let titleTextheight = videoTitle.height(withConstrainedWidth: videoDescwidth, font: title.font)
-                
-                print(titleTextheight)
                 if let  titleheightconstraint = (title.constraints.filter {$0.firstAttribute == NSLayoutAttribute.height}.first){
                     if titleTextheight <= 20{
                       titleheightconstraint.constant = 28
                     }
-                    
-                    
-                    
                 }
-                
-                
             }
-            
-            
-            
-            
-            
-            
-        
-            
         }
     }
-   
-   
-    
    
     var videothumbnail : UIImageView = {
        let imageview  = UIImageView()
@@ -157,8 +135,8 @@ class HomefeedCell: UICollectionViewCell {
         subtitle.text = "The Comedy Central UK • 3254678 views • 11 hours ago"
         subtitle.font = UIFont.systemFont(ofSize: 12)
         subtitle.textColor = UIColor.gray
-        //subtitle.layer.borderColor = UIColor.black.cgColor
-        //subtitle.layer.borderWidth = 1.0
+//        subtitle.layer.borderColor = UIColor.black.cgColor
+//        subtitle.layer.borderWidth = 1.0
         //subtitle.frame.size.height = 25
         subtitle.contentInset = UIEdgeInsets(top: -8, left: -4, bottom: 0, right: 0)
         return subtitle
@@ -200,7 +178,7 @@ class HomefeedCell: UICollectionViewCell {
         
         title.anchor(videoDescription.topAnchor, left: videoDescription.leftAnchor, bottom: nil, right: videoDescription.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 44)
         
-        subtitle.anchor(title.bottomAnchor, left: videoDescription.leftAnchor, bottom: nil, right: videoDescription.rightAnchor, topConstant: -5, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 30)
+        subtitle.anchor(title.bottomAnchor, left: videoDescription.leftAnchor, bottom: nil, right: videoDescription.rightAnchor, topConstant: -5, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 40)
         
     }
     
