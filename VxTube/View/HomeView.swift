@@ -61,12 +61,51 @@ class HomeView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UI
     }
     
     func loadHomefeed(){
-        let video1 = Video(thumbnailUrl: "colbert", videoTitle: "The Mooch Deletes His Tweets - The Daily Show | Comedy Central The Mooch Deletes His Tweets - The Daily Show", noOfViews: 5800, timeStamp: 180, channel: Channel(channelName: "The Comedy Central UK ", userProfileUrl: "profilepic"))
-        let video2 = Video(thumbnailUrl: "colbert", videoTitle: "That one friend who cannot grow a beard", noOfViews: 51000, timeStamp: 18,channel: Channel(channelName: "Tashish chanchalani vines", userProfileUrl: "profilepic"))
+        videos = [Video]()
+        let url = URL(string: homefeedUrl)
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error != nil{
+                print("The error is ",error!)
+                return
+            }
+            
+            if let data = data{
+                do{
+                    let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)
+                    if let videos2 = json as? [[String:Any]]{
+                        for video in videos2{
+                            
+                            let title = (video["title"] as? String) ?? ""
+                            let thumbnailUrl = (video["thumbnail_image_name"] as? String) ?? ""
+                            let numberofViews = (video["number_of_views"] as? Int) ?? 0
+                            var achannel: Channel?
+                            if let channel = video["channel"] as? [String:Any]{
+                                let channelname = (channel["name"] as? String) ?? ""
+                                let profileimageurl = (channel["profile_image_name"] as? String) ?? "profilepic"
+                                achannel = Channel(channelName: channelname, userProfileUrl: profileimageurl)
+                            }
+                            
+                            self.videos.append(Video(thumbnailUrl: thumbnailUrl, videoTitle: title, noOfViews: numberofViews, timeStamp: 3, channel: (achannel ?? nil)!))
+                            DispatchQueue.main.async {
+                                self.HomeFeedCollectionView.reloadData()
+                            }
+                        }
+                    }
+                    
+                }catch let err{
+                    print("Error in serializing data to json", err)
+                }
+                
+                
+            }
+        }.resume()
         
-        let video3 = Video(thumbnailUrl: "colbert", videoTitle: "How to go from military to IOS Developer", noOfViews: 3000, timeStamp: 1320, channel: Channel(channelName: "Lets Build That App", userProfileUrl: "profilepic"))
-        
-        videos = [video1,video2,video3]
+//        let video1 = Video(thumbnailUrl: "colbert", videoTitle: "The Mooch Deletes His Tweets - The Daily Show | Comedy Central The Mooch Deletes His Tweets - The Daily Show", noOfViews: 5800, timeStamp: 180, channel: Channel(channelName: "The Comedy Central UK ", userProfileUrl: "profilepic"))
+//        let video2 = Video(thumbnailUrl: "colbert", videoTitle: "That one friend who cannot grow a beard", noOfViews: 51000, timeStamp: 18,channel: Channel(channelName: "Tashish chanchalani vines", userProfileUrl: "profilepic"))
+//        
+//        let video3 = Video(thumbnailUrl: "colbert", videoTitle: "How to go from military to IOS Developer", noOfViews: 3000, timeStamp: 1320, channel: Channel(channelName: "Lets Build That App", userProfileUrl: "profilepic"))
+//        
+//        videos = [video1,video2,video3]
         
     }
     
